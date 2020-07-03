@@ -1,7 +1,12 @@
-<ul>
-    <li>Feature 1</li>
-    <li>Feature 2</li>
-    <li>Feature 3</li>
-    <li>Feature 4</li>
-    <li>Feature 5</li>
+<ul class="features">
+    <%= for feature <- @features do %>
+    <li phx-click="show-desc" phx-value-key="<%= feature.key %>">
+        <span class="key"><%= feature.key %></span>
+        <span class="title"><%= feature.title %></span>
+    </li>
+    <% end %>
 </ul>
+
+<div class="feature_description">
+    <%= @desc %>
+</div>
