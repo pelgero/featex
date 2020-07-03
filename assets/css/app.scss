@@ -1,91 +1,71 @@
-/* This file is for your main application css. */
-@import "./phoenix.css";
-@import "../node_modules/nprogress/nprogress.css";
+$color-primary:     #fcfcfc;
+$color-secondary:   #32475f;
+$color-tertiary:    #919690;
+$color-accent:      #7dca84;
+$color-accent-weak: #95ce9d;
 
-/* LiveView specific classes for your customizations */
-.invalid-feedback {
-  color: #a94442;
-  display: block;
-  margin: -1rem 0 2rem;
-}
+$color-black:       #000000;
+$color-black-80:    #202020;
+$color-black-60:    #404040;
+$color-black-40:    #606060;
+$color-black-20:    #808080;
 
-.phx-no-feedback.invalid-feedback, .phx-no-feedback .invalid-feedback {
-  display: none;
-}
+$text-color: $color-secondary;
+$text-color-inverted: $color-primary;
 
-.phx-click-loading {
-  opacity: 0.5;
-  transition: opacity 1s ease-out;
-}
-
-.phx-disconnected{
-  cursor: wait;
-}
-.phx-disconnected *{
-  pointer-events: none;
+html, body {
+    margin: 0;
+    padding: 0;
 }
 
-.phx-modal {
-  opacity: 1!important;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: $text-color;
+    background-color: $color-primary;
 }
 
-.phx-modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+header {
+    height: 96px;
+    background-color: $color-secondary;
+    color: $text-color-inverted;
+    border-bottom: 4px solid $color-black-20;
 }
 
-.phx-modal-close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+header .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    padding-top:24px;
 }
 
-.phx-modal-close:hover,
-.phx-modal-close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+header .logo-sub {
+    font-size: 0.75rem;
 }
 
+main {
+    padding-top:20px;
+}
 
-/* Alerts and form errors */
-.alert {
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-  border-radius: 4px;
+main .content {
+   min-height: 400px;
 }
-.alert-info {
-  color: #31708f;
-  background-color: #d9edf7;
-  border-color: #bce8f1;
+
+footer {
+    height: 36px;
+    line-height: 36px;
+    font-size: 0.8rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: $color-secondary;
+    color: $text-color-inverted;
+    text-align: center;
+    border-top: 4px solid $color-black-20;
 }
-.alert-warning {
-  color: #8a6d3b;
-  background-color: #fcf8e3;
-  border-color: #faebcc;
+
+.container {
+    width: 1024px;
+    margin:0 auto;
 }
-.alert-danger {
-  color: #a94442;
-  background-color: #f2dede;
-  border-color: #ebccd1;
-}
-.alert p {
-  margin-bottom: 0;
-}
-.alert:empty {
-  display: none;
-}
+
+@import 'alert.scss';

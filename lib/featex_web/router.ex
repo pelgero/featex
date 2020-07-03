@@ -17,7 +17,8 @@ defmodule FeatexWeb.Router do
   scope "/", FeatexWeb do
     pipe_through :browser
 
-    live "/", PageLive, :index
+    live "/", HomeLive
+    live "/features", ListFeaturesLive
   end
 
   # Other scopes may use custom stacks.
